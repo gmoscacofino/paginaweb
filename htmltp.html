@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biodegradable Store</title>
+  <link rel="stylesheet" href="csstp.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="htmltp.html">Home</a></li>
+        <li><a href="bio.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="#" id="cart-btn">Cart (<span id="cart-count">0</span>)</a></li>
+      </ul>
+    </nav>
+    <h1>Biodegradable Store</h1>
+    <p>Eco-friendly solutions for a better tomorrow</p>
+  </header>
+
+  <!-- Scrollable Benefits Section -->
+  <section class="benefits-scroll">
+    <div class="benefits-container">
+      <div class="benefit-card">
+        <h3>Eco-Friendly</h3>
+        <p>All products leave no harmful residues, ensuring a cleaner planet.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Certified Biodegradable</h3>
+        <p>Every item is officially certified as biodegradable, meeting high environmental standards.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Reduce Plastic Waste</h3>
+        <p>Choosing biodegradable products significantly reduces waste in landfills.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Compostable</h3>
+        <p>Many of our products can be safely composted, returning nutrients to the soil.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Support Sustainability</h3>
+        <p>Your purchase supports environmentally friendly practices and businesses.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Healthier Living</h3>
+        <p>Using biodegradable products reduces toxins in your home, promoting better health.</p>
+      </div>
+      <div class="benefit-card">
+        <h3>Community Impact</h3>
+        <p>Purchasing biodegradable products helps local eco-friendly businesses thrive.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificate">
+    <h2>Certified Biodegradable</h2>
+    <p>
+      We are proud to ensure that all products in our store come with an official
+      <strong>Biodegradability Certification</strong>. This certification guarantees
+      that every item sold meets stringent eco-friendly standards and is 100% biodegradable.
+      We partner with trusted environmental agencies to confirm that the materials
+      used in our products break down naturally, leaving no harmful residue behind.
+    </p>
+    <img src="https://via.placeholder.com/300x150" alt="Biodegradable Certification">
+  </section>
+
+  <main>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Biodegradable Plates">
+        <h2>Biodegradable Plates</h2>
+        <p>Price: $10</p>
+        <button onclick="addToCart(1, 'Biodegradable Plates', 10)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Eco-friendly Cutlery">
+        <h2>Eco-friendly Cutlery</h2>
+        <p>Price: $5</p>
+        <button onclick="addToCart(2, 'Eco-friendly Cutlery', 5)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Biodegradable Trash Bags">
+        <h2>Biodegradable Trash Bags</h2>
+        <p>Price: $15</p>
+        <button onclick="addToCart(3, 'Biodegradable Trash Bags', 15)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Compostable Straws">
+        <h2>Compostable Straws</h2>
+        <p>Price: $8</p>
+        <button onclick="addToCart(4, 'Compostable Straws', 8)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Bamboo Toothbrush">
+        <h2>Bamboo Toothbrush</h2>
+        <p>Price: $3</p>
+        <button onclick="addToCart(5, 'Bamboo Toothbrush', 3)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Natural Soap Bars">
+        <h2>Natural Soap Bars</h2>
+        <p>Price: $7</p>
+        <button onclick="addToCart(6, 'Natural Soap Bars', 7)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Recyclable Coffee Cups">
+        <h2>Recyclable Coffee Cups</h2>
+        <p>Price: $12</p>
+        <button onclick="addToCart(7, 'Recyclable Coffee Cups', 12)">Add to Cart</button>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Reusable Produce Bags">
+        <h2>Reusable Produce Bags</h2>
+        <p>Price: $9</p>
+        <button onclick="addToCart(8, 'Reusable Produce Bags', 9)">Add to Cart</button>
+      </div>
+      <!-- Add more products as needed -->
+    </div>
+  </main>
+
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-cart">&times;</span>
+      <h2>Your Cart</h2>
+      <ul id="cart-items"></ul>
+      <p id="total-price">Total: $0</p>
+      <button id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <div id="checkout-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-checkout">&times;</span>
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="address">Address:</label>
+        <input type="text" id="address" required>
+        <button type="submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Biodegradable Store | Promoting sustainability for future generations</p>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank">Facebook</a> |
+      <a href="https://twitter.com" target="_blank">Twitter</a> |
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <script src="javatp.js"></script>
+</body>
+</html>
